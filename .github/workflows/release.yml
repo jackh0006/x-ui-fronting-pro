@@ -1,0 +1,33 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create archive
+        run: |
+          VERSION="${GITHUB_REF#refs/tags/}"
+          tar -czf "x-ui-fronting-pro-${VERSION}.tar.gz" \
+            xui-fronting-pro.sh install.sh README.md LICENSE CHANGELOG.md docs/
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: "*.tar.gz"
+          generate_release_notes: true
+          body: |
+            ## x-ui Fronting Panel PRO
+
+            Quick Install:
+            ```bash
+            bash <(curl -Ls https://raw.githubusercontent.com/jackh0006/x-ui-fronting-pro/main/install.sh)
+            ```
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
