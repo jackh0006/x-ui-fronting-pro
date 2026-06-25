@@ -18,7 +18,7 @@
                           P R O
 </pre>
 
-# x-ui Fronting Panel PRO
+# X-UI Fronting Panel PRO
 
 **The most advanced HAProxy SNI fronting control panel for 3x-ui**
 
