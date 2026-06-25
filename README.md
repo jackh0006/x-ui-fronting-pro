@@ -176,19 +176,17 @@ Auto-installed packages: haproxy certbot ufw curl wget openssl rsync sqlite3 nan
 
 ## Quick Install
 
-```bash
-bash <(curl -Ls https://raw.githubusercontent.com/jackh0006/x-ui-fronting-pro/main/install.sh)
+wget https://github.com/jackh0006/x-ui-fronting-pro/releases/download/v1.0.0/X-UI_froanting_pro
 
 Manual install:
 
-git clone https://github.com/jackh0006/x-ui-fronting-pro.git
-cd x-ui-fronting-pro
-chmod +x xui-fronting-pro.sh
-sudo ./xui-fronting-pro.sh
+wget https://github.com/jackh0006/x-ui-fronting-pro/releases/download/v1.0.0/X-UI_froanting_pro
+chmod +x X-UI_froanting_pro.sh
+sudo ./X-UI_froanting_pro.sh
 
 Launch anytime after install:
 
-sudo xui-fronting-pro
+sudo ./X-UI_froanting_pro.sh
 
 Always run as root. The panel requires root to manage HAProxy certificates and firewall.
 
